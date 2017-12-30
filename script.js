@@ -34,11 +34,11 @@ function sortBeers() {
   isAscending = !isAscending;
 if (isAscending) {
   beers.sort(function(a, b){
-    return a.beerRating -b.beerRating;
+    return b.beerRating -a.beerRating;
   })
 } else {
 	beers.sort(function(a, b){
-    return b.beerRating -a.beerRating;
+    return a.beerRating -b.beerRating;
   	})
   }
   renderBeers();
