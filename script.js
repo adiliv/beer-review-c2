@@ -26,23 +26,21 @@ function renderBeers(){
   }
 }
 
-var timesClicked = 0;
+var isAscending = true;
 
 $('.sort-beer').click(sortBeers);
 
-function sortBeers(){
-  timesClicked++;
-  // change the array - sort
+function sortBeers() {
+  isAscending = !isAscending;
+if (isAscending) {
   beers.sort(function(a, b){
     return a.beerRating -b.beerRating;
-})
-    // render the array
-  renderBeers();
-  if(timesClicked > 1){
-    beers.sort(function(a, b){
-      return b.beerRating -a.beerRating;
   })
-  renderBeers();
+} else {
+	beers.sort(function(a, b){
+    return b.beerRating -a.beerRating;
+  	})
   }
+  renderBeers();
 }
 
